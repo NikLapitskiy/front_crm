@@ -32,211 +32,212 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
   const { pathname } = useLocation();
   const role = loggedUser?.role;
   const adminLinks = [
-    {
-      id: 1,
-      title: "Dashboard",
-      link: "/",
-      icon: <PiHouseLight className="text-[25px]" />,
-      role: ["employee", "manager", "super_admin"],
-      childrens: [],
-    },
-    {
-      id: 2,
-      title: "Leads",
-      icon: <PiUsersThreeLight className="text-[25px]" />,
-      link: "/leads",
-      role: ["employee", "manager", "super_admin"],
-      childrens: [],
-    },
-    {
-      id: 3,
-      title: "To Do Tasks",
-      icon: <PiListChecksLight className="text-[25px]" />,
-      link: "/tasks",
-      role: ["employee", "manager", "super_admin"],
-      childrens: [],
-    },
-    {
-      id: 4,
-      title: "User",
-      icon: <PiUserCircleLight className="text-[25px]" />,
-      childrens: [
-        {
-          title: "Clients",
-          icon: <PiUserListLight className="text-[25px]" />,
-          link: "/clients",
-          role: ["employee", "manager", "super_admin"],
-        },
-        {
-          title: "Employees",
-          icon: <PiUserListLight className="text-[25px]" />,
-          link: "/employees",
-          role: ["manager", "super_admin"],
-        },
-      ],
-    },
-    {
-      id: 5,
-      title: "Authorization",
-      icon: <PiLockKeyLight className="text-[25px]" />,
-      childrens: [
-        {
-          title: "Approvals",
-          icon: <PiSealCheckLight className="text-[25px]" />,
-          link: "/authorization/request",
-          role: ["manager", "super_admin"],
-        },
-        {
-          title: "Refunds",
-          icon: <PiMoneyLight className="text-[25px]" />,
-          link: "/authorization/refund",
-          role: ["manager", "super_admin"],
-        },
-      ],
-    },
-    {
-      id: 6,
-      title: "Inventory",
-      icon: <PiLockKeyLight className="text-[25px]" />,
-      childrens: [
-        {
-          title: "Societies",
-          icon: <PiMoneyLight className="text-[25px]" />,
-          link: "/societies",
-          role: ["manager", "super_admin"],
-        },
-        {
-          title: "Projects",
-          icon: <PiMoneyLight className="text-[25px]" />,
-          link: "/projects",
-          role: ["manager", "super_admin"],
-        },
-        {
-          title: "Inventories",
-          icon: <PiSealCheckLight className="text-[25px]" />,
-          link: "/inventories",
-          role: ["manager", "super_admin"],
-        },
-      ],
-    },
-    {
-      id: 6,
-      title: "Sales",
-      icon: <PiShoppingCartSimpleLight className="text-[25px]" />,
-      role: ["employee", "manager", "super_admin"],
-      link: "/sales",
-      childrens: [],
-    },
-    {
-      id: 6,
-      title: "Transcript",
-      icon: <PiMoneyLight className="text-[25px]" />,
-      role: ["manager", "super_admin"],
-      link: "/transcript",
-      childrens: [],
-    },
-    {
-      id: 7,
-      title: "Cash Book",
-      icon: <PiBankLight className="text-[25px]" />,
-      childrens: [
-        {
-          title: "All Cash Book",
-          icon: <PiMoneyLight className="text-[25px]" />,
-          link: "/cashbook",
-          role: ["employee", "manager", "super_admin"],
-        },
-        {
-          title: "View Cash Book",
-          icon: <PiCalendarCheckLight className="text-[25px]" />,
-          link: "/view/cashbook",
-          role: ["employee", "manager", "super_admin"],
-        },
-      ],
-    },
-    {
-      id: 8,
-      title: "Vouchers",
-      icon: <PiReceiptLight className="text-[25px]" />,
-      role: ["employee", "manager", "super_admin"],
-      link: "/voucher",
-      childrens: [],
-    },
-  ];
-  const employeeLinks = [
-    {
-      id: 1,
-      title: "Dashboard",
-      link: "/",
-      icon: <PiHouseLight className="text-[25px]" />,
-      role: ["employee", "manager", "super_admin"],
-      childrens: [],
-    },
-    {
-      id: 2,
-      title: "Leads",
-      icon: <PiUsersThreeLight className="text-[25px]" />,
-      link: "/leads",
-      role: ["employee", "manager", "super_admin"],
-      childrens: [],
-    },
-    {
-      id: 4,
-      title: "To Do Tasks",
-      icon: <PiListChecksLight className="text-[25px]" />,
-      link: "/tasks",
-      role: ["employee", "manager", "super_admin"],
-      childrens: [],
-    },
-    {
-      id: 5,
-      title: "User",
-      icon: <PiUserCircleLight className="text-[25px]" />,
-      childrens: [
-        {
-          title: "Clients",
-          icon: <PiUserListLight className="text-[25px]" />,
-          link: "/clients",
-          role: ["employee", "manager", "super_admin"],
-        },
-      ],
-    },
-    {
-      id: 6,
-      title: "Sales",
-      icon: <PiShoppingCartSimpleLight className="text-[25px]" />,
-      role: ["employee", "manager", "super_admin"],
-      link: "/sales",
-      childrens: [],
-    },
-    {
-      id: 7,
-      title: "Cash Book",
-      icon: <PiBankLight className="text-[25px]" />,
-      childrens: [
-        {
-          title: "All Cash Book",
-          icon: <PiMoneyLight className="text-[25px]" />,
-          link: "/cashbook",
-          role: ["employee", "manager", "super_admin"],
-        },
-        {
-          title: "View Cash Book",
-          icon: <PiCalendarCheckLight className="text-[25px]" />,
-          link: "/view/cashbook",
-          role: ["employee", "manager", "super_admin"],
-        },
-      ],
-    },
-    {
-      id: 8,
-      title: "Vouchers",
-      icon: <PiReceiptLight className="text-[25px]" />,
-      role: ["employee", "manager", "super_admin"],
-      link: "/voucher",
-      childrens: [],
-    },
-  ];
+  {
+    id: 1,
+    title: "Панель управления",
+    link: "/",
+    icon: <PiHouseLight className="text-[25px]" />,
+    role: ["employee", "manager", "super_admin"],
+    childrens: [],
+  },
+  {
+    id: 2,
+    title: "Лиды",
+    icon: <PiUsersThreeLight className="text-[25px]" />,
+    link: "/leads",
+    role: ["employee", "manager", "super_admin"],
+    childrens: [],
+  },
+  {
+    id: 3,
+    title: "Задачи",
+    icon: <PiListChecksLight className="text-[25px]" />,
+    link: "/tasks",
+    role: ["employee", "manager", "super_admin"],
+    childrens: [],
+  },
+  {
+    id: 4,
+    title: "Пользователи",
+    icon: <PiUserCircleLight className="text-[25px]" />,
+    childrens: [
+      {
+        title: "Клиенты",
+        icon: <PiUserListLight className="text-[25px]" />,
+        link: "/clients",
+        role: ["employee", "manager", "super_admin"],
+      },
+      {
+        title: "Сотрудники",
+        icon: <PiUserListLight className="text-[25px]" />,
+        link: "/employees",
+        role: ["manager", "super_admin"],
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "Авторизация",
+    icon: <PiLockKeyLight className="text-[25px]" />,
+    childrens: [
+      {
+        title: "Одобрения",
+        icon: <PiSealCheckLight className="text-[25px]" />,
+        link: "/authorization/request",
+        role: ["manager", "super_admin"],
+      },
+      {
+        title: "Возвраты",
+        icon: <PiMoneyLight className="text-[25px]" />,
+        link: "/authorization/refund",
+        role: ["manager", "super_admin"],
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "Инвентарь",
+    icon: <PiLockKeyLight className="text-[25px]" />,
+    childrens: [
+      {
+        title: "Общества",
+        icon: <PiMoneyLight className="text-[25px]" />,
+        link: "/societies",
+        role: ["manager", "super_admin"],
+      },
+      {
+        title: "Проекты",
+        icon: <PiMoneyLight className="text-[25px]" />,
+        link: "/projects",
+        role: ["manager", "super_admin"],
+      },
+      {
+        title: "Инвентаризации",
+        icon: <PiSealCheckLight className="text-[25px]" />,
+        link: "/inventories",
+        role: ["manager", "super_admin"],
+      },
+    ],
+  },
+  {
+    id: 7,
+    title: "Продажи",
+    icon: <PiShoppingCartSimpleLight className="text-[25px]" />,
+    role: ["employee", "manager", "super_admin"],
+    link: "/sales",
+    childrens: [],
+  },
+  {
+    id: 8,
+    title: "Транскрипция",
+    icon: <PiMoneyLight className="text-[25px]" />,
+    role: ["manager", "super_admin"],
+    link: "/transcript",
+    childrens: [],
+  },
+  {
+    id: 9,
+    title: "Касса",
+    icon: <PiBankLight className="text-[25px]" />,
+    childrens: [
+      {
+        title: "Вся Касса",
+        icon: <PiMoneyLight className="text-[25px]" />,
+        link: "/cashbook",
+        role: ["employee", "manager", "super_admin"],
+      },
+      {
+        title: "Просмотр Кассы",
+        icon: <PiCalendarCheckLight className="text-[25px]" />,
+        link: "/view/cashbook",
+        role: ["employee", "manager", "super_admin"],
+      },
+    ],
+  },
+  {
+    id: 10,
+    title: "Чеки",
+    icon: <PiReceiptLight className="text-[25px]" />,
+    role: ["employee", "manager", "super_admin"],
+    link: "/voucher",
+    childrens: [],
+  },
+];
+
+const employeeLinks = [
+  {
+    id: 1,
+    title: "Панель управления",
+    link: "/",
+    icon: <PiHouseLight className="text-[25px]" />,
+    role: ["employee", "manager", "super_admin"],
+    childrens: [],
+  },
+  {
+    id: 2,
+    title: "Лиды",
+    icon: <PiUsersThreeLight className="text-[25px]" />,
+    link: "/leads",
+    role: ["employee", "manager", "super_admin"],
+    childrens: [],
+  },
+  {
+    id: 3,
+    title: "Задачи",
+    icon: <PiListChecksLight className="text-[25px]" />,
+    link: "/tasks",
+    role: ["employee", "manager", "super_admin"],
+    childrens: [],
+  },
+  {
+    id: 4,
+    title: "Пользователь",
+    icon: <PiUserCircleLight className="text-[25px]" />,
+    childrens: [
+      {
+        title: "Клиенты",
+        icon: <PiUserListLight className="text-[25px]" />,
+        link: "/clients",
+        role: ["employee", "manager", "super_admin"],
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "Продажи",
+    icon: <PiShoppingCartSimpleLight className="text-[25px]" />,
+    role: ["employee", "manager", "super_admin"],
+    link: "/sales",
+    childrens: [],
+  },
+  {
+    id: 6,
+    title: "Касса",
+    icon: <PiBankLight className="text-[25px]" />,
+    childrens: [
+      {
+        title: "Вся Касса",
+        icon: <PiMoneyLight className="text-[25px]" />,
+        link: "/cashbook",
+        role: ["employee", "manager", "super_admin"],
+      },
+      {
+        title: "Просмотр Кассы",
+        icon: <PiCalendarCheckLight className="text-[25px]" />,
+        link: "/view/cashbook",
+        role: ["employee", "manager", "super_admin"],
+      },
+    ],
+  },
+  {
+    id: 7,
+    title: "Чеки",
+    icon: <PiReceiptLight className="text-[25px]" />,
+    role: ["employee", "manager", "super_admin"],
+    link: "/voucher",
+    childrens: [],
+  },
+];
   const links = loggedUser.role == "employee" ? employeeLinks : adminLinks;
 
   const [openedMenu, setOpenedMenu] = useState(false);
